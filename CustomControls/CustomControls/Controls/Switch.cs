@@ -10,11 +10,14 @@ using System.Diagnostics;
 
 namespace CustomControls.Controls
 {
+    [TemplatePart(Name = "Trigger", Type = typeof(Button))]
+
     public class Switch : Control
     {
         public static readonly DependencyProperty ToggledProperty = DependencyProperty.Register("Toggled", typeof(bool), typeof(Switch), new PropertyMetadata(false));
-        public static readonly RoutedEvent ToggleSwitchedEvent = EventManager.RegisterRoutedEvent("ToggleSwitched", RoutingStrategy.Bubble, typeof(RoutedEventArgs), typeof(Switch));
-        
+
+
+
         public bool Toggled
         {
             get => (bool)GetValue(ToggledProperty);
@@ -26,29 +29,26 @@ namespace CustomControls.Controls
             }
         }
 
-        private event RoutedEventHandler ToggleSwitched
-        {
-            add 
-            {
-                AddHandler(ToggleSwitchedEvent, value);
-            }
-            remove 
-            { 
-                RemoveHandler(ToggleSwitchedEvent, value);
-            }
-        }
+        private Button buttonElement;
 
-        void OnToggled()
+        private Button ButtonElement
         {
-            RaiseEvent(new RoutedEventArgs(ToggleSwitchedEvent, this));
-            Toggled = !Toggled;
+            get => buttonElement;
+            set
+            {
+                if( buttonElement != null ) 
+                { 
+                
+                }
+            }
         }
 
         static Switch()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Switch), new FrameworkPropertyMetadata(typeof(Switch)));
-            
+
         }
+
 
         void UpdateVisualState()
         {

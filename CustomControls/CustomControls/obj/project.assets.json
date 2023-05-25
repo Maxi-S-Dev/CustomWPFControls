@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\CustomWPFControls\\CustomControls\\CustomControls\\CustomControls.csproj",
+      "projectUniqueName": "D:\\github\\CustomWPFControls\\CustomControls\\CustomControls\\CustomControls.csproj",
       "projectName": "CustomControls",
-      "projectPath": "C:\\GitHub\\CustomWPFControls\\CustomControls\\CustomControls\\CustomControls.csproj",
+      "projectPath": "D:\\github\\CustomWPFControls\\CustomControls\\CustomControls\\CustomControls.csproj",
       "packagesPath": "C:\\Users\\max03\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\CustomWPFControls\\CustomControls\\CustomControls\\obj\\",
+      "outputPath": "D:\\github\\CustomWPFControls\\CustomControls\\CustomControls\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
