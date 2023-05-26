@@ -28,9 +28,11 @@
 
             </Label>
 
-            <control:Switch Toggled="True"/>
-            <control:Switch Toggled="False"/>
+            <control:Switch Toggled="False" />
+            
+            <control:Switch Toggled="True" Margin="0, 10, 0, 0"/>
 
+            
 
         </StackPanel>
 

@@ -10,12 +10,13 @@ using System.Diagnostics;
 
 namespace CustomControls.Controls
 {
-    [TemplatePart(Name = "Trigger", Type = typeof(Button))]
+    [TemplatePart(Name = "TriggerElement", Type = typeof(Button))]
+    [TemplateVisualState(Name = "Toggled", GroupName = "ValueStates")]
+    [TemplateVisualState(Name = "Negative", GroupName = "ValueStates")]
 
     public class Switch : Control
     {
-        public static readonly DependencyProperty ToggledProperty = DependencyProperty.Register("Toggled", typeof(bool), typeof(Switch), new PropertyMetadata(false));
-
+        public static DependencyProperty ToggledProperty = DependencyProperty.Register("Toggled", typeof(bool), typeof(Switch), new PropertyMetadata(false));
 
 
         public bool Toggled
@@ -29,31 +30,51 @@ namespace CustomControls.Controls
             }
         }
 
-        private Button buttonElement;
+        Button triggerElement;
 
-        private Button ButtonElement
+        Button TriggerElement
         {
-            get => buttonElement;
+            get => triggerElement;
             set
             {
-                if( buttonElement != null ) 
-                { 
-                
+                if(triggerElement != null ) 
+                {
+                    triggerElement.Click -= new RoutedEventHandler(buttonElement_Click);
+                }
+                triggerElement = value;
+
+                if (triggerElement != null ) 
+                {
+                    triggerElement.Click += new RoutedEventHandler(buttonElement_Click);
                 }
             }
         }
 
-        static Switch()
+        void buttonElement_Click(object sender, RoutedEventArgs e)
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(Switch), new FrameworkPropertyMetadata(typeof(Switch)));
+            Toggled = !Toggled;
+            UpdateVisualState();
+        }
 
+        public override void OnApplyTemplate()
+        {
+            TriggerElement = GetTemplateChild("Trigger") as Button;
+            UpdateVisualState();
+        }
+
+        Switch()
+        {
+            //DefaultStyleKeyProperty.OverrideMetadata(typeof(Switch), new FrameworkPropertyMetadata(typeof(Switch)));
+            DefaultStyleKey = typeof(Switch);
         }
 
 
         void UpdateVisualState()
         {
-            VisualStateManager.GoToState(this, "Toggled", Toggled);
-            VisualStateManager.GoToState(this, "UnToggled", !Toggled);
+            if(Toggled) VisualStateManager.GoToState(this, "Toggled", true);
+            if (!Toggled) VisualStateManager.GoToState(this, "UnToggled", true);
+
+            Trace.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
         }
     }
 }       

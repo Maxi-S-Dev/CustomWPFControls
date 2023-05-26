@@ -44,5 +44,10 @@ namespace CustomControls
             App.Current.Resources.Clear();
             App.Current.Resources.MergedDictionaries.Add(Theme);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

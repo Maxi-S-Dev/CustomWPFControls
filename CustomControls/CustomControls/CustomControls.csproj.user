@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\NumericUpDownStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\SwitchStyle.xaml">
       <SubType>Designer</SubType>
     </Page>

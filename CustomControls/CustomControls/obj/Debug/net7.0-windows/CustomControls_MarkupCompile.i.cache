@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\github\CustomWPFControls\CustomControls\CustomControls\App.xaml
-41353550320
+5-1999781809
 
-71832600389
+8-153452687
 1981827736222
-Controls\SwitchStyle.xaml;Controls\ToggleSwitch.xaml;MainWindow.xaml;Themes\Generic.xaml;
+Controls\NumericUpDownStyle.xaml;Controls\SwitchStyle.xaml;Controls\ToggleSwitch.xaml;MainWindow.xaml;Themes\Generic.xaml;
 
-False
+True
 

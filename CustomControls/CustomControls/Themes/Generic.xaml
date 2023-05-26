@@ -3,5 +3,6 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Controls/SwitchStyle.xaml"/>
+        <ResourceDictionary Source="Controls/NumericUpDownStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
